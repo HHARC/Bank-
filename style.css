@@ -1,12 +1,11 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
@@ -17,6 +16,7 @@ body {
   padding: 2rem;
 }
 
+/* NAVIGATION */
 nav {
   display: flex;
   justify-content: space-between;
@@ -37,6 +37,7 @@ nav {
   display: flex;
 }
 
+/* INPUT FIELDS */
 .login__input {
   border: none;
   padding: 0.5rem 2rem;
@@ -86,7 +87,6 @@ nav {
   grid-template-columns: 4fr 3fr;
   grid-template-rows: auto repeat(3, 15rem) auto;
   gap: 2rem;
-
   opacity: 0;
   transition: all 1s;
 }
@@ -225,6 +225,7 @@ h2 {
   color: #333;
 }
 
+/* FORMS */
 .form {
   display: grid;
   grid-template-columns: 2.5fr 2.5fr 1fr;
@@ -235,6 +236,7 @@ h2 {
 .form.form--loan {
   grid-template-columns: 2.5fr 1fr 2.5fr;
 }
+
 .form__label--loan {
   grid-row: 2;
 }
@@ -276,6 +278,7 @@ h2 {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+/* LOGOUT TIMER */
 .logout-timer {
   padding: 0 0.3rem;
   margin-top: 1.9rem;
@@ -285,4 +288,99 @@ h2 {
 
 .timer {
   font-weight: 600;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
+  .movements__type--deposit {
+    width: 100px;
+  }
+
+  .balance {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .movements__row {
+    padding: 1rem 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .movements__type,
+  .movements__date,
+  .movements__value {
+    font-size: 1.4rem;
+  }
+
+  .summary {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+
+  .summary__value {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form__input,
+  .form__btn {
+    font-size: 1.4rem;
+  }
+
+  .logout-timer {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome {
+    font-size: 1.6rem;
+  }
+
+  .logo {
+    height: 4rem;
+  }
+
+  .login__input {
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    width: 10rem;
+  }
+
+  .login__btn {
+    font-size: 1.8rem;
+  }
+
+  .app {
+    padding: 1rem;
+  }
+
+  .movements__row {
+    padding: 1rem 1.5rem;
+  }
+
+  .summary {
+    padding: 0 1rem;
+  }
+
+  .operation {
+    padding: 2rem 3rem;
+  }
+
+  .form__input,
+  .form__btn {
+    font-size: 1.2rem;
+  }
 }
